@@ -1,16 +1,26 @@
-<!-- Modify this page to use a select and an input to generate a calendar for any month and year -->
-
 <!DOCTYPE html>
+
 <html>
-    <head>
-        <title>Javascript Calendar</title>
-        <link rel='stylesheet' href='calendar.css'>
-    </head>
-    <body>
-        <div class='calendarWrapper'>
-            <div class='calendarTitle'></div>
-            <div class='calendar' id='calendarDays'></div>
+
+<head>
+    <title>Javascript Calendar</title>
+    <link rel="stylesheet" href="calendar.css ">
+</head>
+
+<body>
+    <div class="calendarWrapper">
+        <div class="calendarTitle">
+            <h2>Perpetual Calendar</h2>
         </div>
-    </body>
-    <script src='./calendar.js'></script>
+        <div class="calendarTitle">
+            <select name="months" id="months"></select>
+            <input type="number" id="inputYear">
+            <button id="goButton">Go</button>
+        </div>
+        <div class="calendar" id="calendarDays"></div>
+    </div>
+</body>
+<script src="./calendar.js"></script>
+
 </html>
+<!-- Modify this page to use a select and an input to generate a calendar for any month and year -->
