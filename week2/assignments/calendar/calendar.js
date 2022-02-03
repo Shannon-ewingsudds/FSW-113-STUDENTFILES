@@ -27,6 +27,8 @@ document.querySelector("#inputYear").value = new Date().getFullYear();
 document.querySelector("#goButton").addEventListener("click", function printCalendar() {
     document.getElementById("calendarDays").innerHTML = null;
     let input = document.querySelector("#inputYear");
+
+
     const today = new Date(input.value, select.selectedIndex, 1);
     const month = today.getMonth()
     let days
