@@ -39,14 +39,14 @@ parts.forEach(function(element, index) {
 // if parts requiring special handling exist (in aisle B3), list of items needing 
 // special packaging in the "specialPackaging" element, else remove element
 let specialPackaging = document.querySelector("#specialPackaging");
-let specialHandling = parts.filter(function(element, i) {
-    return parts[i].aisle === "B3";
+let specialHandling = parts.filter(function(element, index) {
+    return parts[index].aisle === "B3";
 });
 
 if (specialHandling.length !== 0) {
-    specialHandling.forEach(function(element, i) {
+    specialHandling.forEach(function(element, index) {
         let revisedHandling = document.createElement("p");
-        revisedHandling.textContent = `Item: ${specialHandling[i].partNbr} / Qty: ${specialHandling[i].qty}`;
+        revisedHandling.textContent = `Item: ${specialHandling[index].partNbr} / Qty: ${specialHandling[index].qty}`;
         specialPackaging.appendChild(revisedHandling);
         specialPackaging.style.height = "max-content";
 
@@ -69,13 +69,37 @@ if (hazardous !== true) {
     hazardNote.textContent = "Please ensure you are wearing your gloves!";
     hazardousParts.appendChild(hazardNote);
     hazardousParts.style.height = "max-content";
-
 }
 
 // if all items in the order are small parts (aisle H1), then let employee know that they should take 
 // a basket and go dirctly to aisle H1
+let smallParts = document.querySelector("#smallItemsOnly");
+let smallItems = parts.every(function(element, index) {
+    return parts[index].aisle === "H1";
+})
+if (smallItems !== true) {
+    smallParts.remove();
+} else {
+    let smallPartsInfo = document.createElement("p");
+    smallPartsInfo.textContent = "You should take a basket and go directly to asile H1";
+    smallParts.appendChild(smallPartsInfo);
+}
 
 // if there are large items (anthing in aisles S, T, or U), then let the employee know in the "forkiftNeeded"
 // element that they will need to reserve a forklift, else remove the element
 
-// sum up the total number of parts and append that number to the text already in "totalItems" element
+
+let forkLiftNeeded = document.querySelector("#forkLiftNeeded");
+let largeParts = parts.find(function(element, index) {
+    return parts[index].aisle === "S" || parts[index].aisle === "T" || parts[index].aisle === "U";
+})
+if (largeParts === undefined) {
+    forkLiftNeeded.remove();
+} else {
+    let forkInfo = document.createElement("p");
+    forkInfo.textContent = "You are required to reserve a forklift for large items!";
+    largeParts.appendChild(forkInfo);
+}
+// sum up the total number of parts and append that number to the text already in "totalItems" element 
+let total = parts.reduce((total, part) => total + part.qty, 0);
+document.querySelector('#totalItems').textContent += ': ' + total;
