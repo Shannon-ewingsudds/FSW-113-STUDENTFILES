@@ -7,13 +7,13 @@ document.querySelector("#submit").addEventListener("click", combineLists);
 // Sort that array and display it in the 'AllItems' element on the scavenger.html document.
 
 function combineLists() {
-    let raji = document.querySelector("#scavenger-0").value.split(",");
+    let raji = document.querySelector("#scavenger-0").value.split(", ");
     let huang = document.querySelector("#scavenger-1").value.split(", ");
     let jose = document.querySelector("#scavenger-2").value.split(", ");
     let veronica = document.querySelector("#scavenger-3").value.split(", ");
     let combinedArr = [...raji, ...huang, ...jose, ...veronica];
 
-    document.querySelector("#AllItems").innerText = combinedArr.join(",");
+    document.querySelector("#AllItems").innerText = combinedArr.join(", ");
 };
 
 // The following code is a bonus addition that facilitates data entry on the scavenger.html document.
