@@ -13,7 +13,7 @@ const certGrade = document.querySelector("#certGrade");
 // Add am event listener that responds to the click of the "print" button by calling a function to instantiate
 //  a new student object, and another function to print the certificate.
 document.querySelector("#print").addEventListener("click", () => {
-    createStudent();
+    instantiateStudent();
     fillCertificate(student);
 });
 // Add an event listener that responds to the click of the reset button by resetting all the values
@@ -28,7 +28,7 @@ document.querySelector("#reset").addEventListener("click", () => {
     certGrade.innerText = "";
 });
 // Create a function that instantiates a new student object with the input from the HTML form.
-function createStudent() {
+function instantiateStudent() {
     let studentScoresArr = toNumArray(studentScores.value);
     let possibleScoresArr = toNumArray(possibleScores.value);
     student = new Student(studentName.value, className.value, studentScoresArr, possibleScoresArr);
