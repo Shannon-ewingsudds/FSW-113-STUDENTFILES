@@ -1,32 +1,39 @@
 /* Modify these styles so that the elements on the HTML page display as they do in the example */
 
 .weatherWrapper {
-  margin: 0 auto;
-  width: 300px;
-  margin-top: 30px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+    width: 300px;
+    margin-top: 30px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 .header {
-  font-size: large;
-  text-align: center;
-  font-weight: 700;
-  padding: 8px;
+    font-size: large;
+    text-align: center;
+    font-weight: 700;
+    padding: 8px;
+    grid-column: 1 / 3
 }
 
 .data {
-  font-size: medium;
-  padding: 8px;
-  text-align: right;
+    font-size: medium;
+    padding: 8px;
+    text-align: right;
+    display: flex;
+    justify-content: end;
 }
 
 .label {
-  font-size: medium;
-  padding: 8px;
+    font-size: medium;
+    padding: 8px;
+    height: 8px;
 }
 
 .footer {
-  font-size: small;
-  text-align: center;
-  padding: 8px;
+    font-size: small;
+    text-align: center;
+    padding: 8px;
+    grid-column: 1 / 3;
 }
