@@ -5,34 +5,38 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Own Bug Tracker</title>
-    </head>
-    <body>
-        <div id='reportWrapper' class='reportWrapper'>
-            <div id='topbar' class='topbar'><img src='./images/bug.png' alt='bug icon' style='height:20px; width:20px;' /> Report a New Bug</div>
-                <form id='bugForm' action='#' onsubmit='reportBug(); return false'>
-                    <div id='reporterByDiv' class='userInput'>
-                        <input placeholder='Reported By' type='text' id='reportedBy' style='width:97%' />
-                    </div>
-                    <div id='systemDiv' class='userInput'>
-                        <select id='system' style='width:100%'></select>
-                    </div>
-                    <div id='subSystemDiv' class='userInput'>
-                        <select id='subSystem' style='width:100%'></select>
-                    </div>
-                    <div id='bugDescrDiv' class='userInput'>
-                        <textarea id='bugDesc' style='width:98%' placeholder='Desribe the bug'></textarea>
-                    </div>
-                    <div id='bttnDiv' style='text-align: right;'>
-                        <button type='reset' id='resetBtn'>Reset</button>
-                        <button type='submit' id='submitBtn'>Submit</button>
-                    </div>
-                </form>
+
+<head>
+    <title>My Own Bug Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id='reportWrapper' class='reportWrapper'>
+        <div id='topbar' class='topbar'><img src='./images/bug.png' alt='bug icon' style='height:20px; width:20px;' /> Report a New Bug</div>
+        <form id='bugForm' action='#' onsubmit='reportBug(); return false'>
+            <div id='reporterByDiv' class='userInput'>
+                <input placeholder='Reported By' type='text' id='reportedBy' style='width:97%' />
             </div>
-            <br />
-            <div id='listWrapper' class='listWrapper'></div>
-        </div>
-    </body>
+            <div id='systemDiv' class='userInput'>
+                <select id='system' style='width:100%'></select>
+            </div>
+            <div id='subSystemDiv' class='userInput'>
+                <select id='subSystem' style='width:100%'></select>
+            </div>
+            <div id='bugDescrDiv' class='userInput'>
+                <textarea id='bugDesc' style='width:98%' placeholder='Desribe the bug'></textarea>
+            </div>
+            <div id='bttnDiv' style='text-align: right;'>
+                <button type='reset' id='resetBtn'>Reset</button>
+                <button type='submit' id='submitBtn'>Submit</button>
+            </div>
+        </form>
+    </div>
+    <br />
+    <div id='listWrapper' class='listWrapper'></div>
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/bug.js"></script>
+</body>
 
 </html>
